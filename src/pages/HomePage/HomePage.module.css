@@ -1,0 +1,30 @@
+/* Title styling */
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the Card Sets and Current Streaks divs */
+  .cardSets, .currStreaks {
+    height: 400px; /* Adjust as per your design */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .spacing {
+    margin-bottom: 20px; /* Spacing for mobile views (vertical spacing) */
+  }
+
+  /* Custom media queries if you need to tweak responsiveness */
+  @media (max-width: 768px) {
+    .cardSets, .currStreaks {
+      height: 300px; /* Adjust height for smaller screens */
+    }
+    .spacing {
+        margin-right: 20px; /* Horizontal spacing for larger screens */
+        margin-bottom: 0; /* Remove bottom margin on larger screens */
+      }
+  }
+  
