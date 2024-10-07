@@ -1,34 +1,28 @@
-interface Cardset {
-    title: string;
-    setId: string;
-    description: string;
-    reminderTime: Date | null;
-    cardIds: string[]; //the card ids that belong to this set
-}
+import { Cardset } from "../../shared/interfaces";
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: Cardset[] = [
     {
         title: "Spanish Cards",
-        setId: "0",
+        setId: "4b9cfd4e-9cb7-4d10-b19d-52bb48a857f8",
         description: "Spanish Vocab for my upcoming final",
         reminderTime: new Date('2024-09-27T00:00:00'),
-        cardIds: ["0-0", "0-1", "0-2"],
+        numCards: 4,
     },
     {
         title: "Math Cards",
-        setId: "1",
+        setId: "a69d7a63-9bc2-40ae-8e9a-56d7d21fa0b7",
         description: "Math definitions for my discrete math final",
         reminderTime: new Date('2024-10-09T00:00:00'),
-        cardIds: ["1-0", "1-1", "1-2"],
+        numCards: 3,
     },
     {
         title: "Physics Cards",
-        setId: "2",
+        setId: "318f3cbb-2d9c-47d2-84e1-87461f73c57c",
         description: "Phsyics Formula for my final",
         reminderTime: new Date('2024-10-27T00:00:00'),
-        cardIds: ["2-0", "2-1", "2-2"],
+        numCards: 5,
     },
 ]
 

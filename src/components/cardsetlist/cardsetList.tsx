@@ -26,7 +26,7 @@ const CardsetList = () => {
               {cardsetsList.map((cardset: any) => (
                 <li key={cardset.setId}>
                   <h2
-                    onClick={() => navigate(`/preview/${cardset.setId}`)}
+                    onClick={() => navigate(`/study/${cardset.setId}`)} //change back to preview
                     style={{ cursor: 'pointer', color: 'blue' }}
                   >
                     {cardset.title}
