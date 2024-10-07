@@ -7,7 +7,6 @@ const StudyPage = () => {
   return (
     <>
       <h1>Study Page</h1>
-      <NavBar></NavBar>
     </>
   );
 };

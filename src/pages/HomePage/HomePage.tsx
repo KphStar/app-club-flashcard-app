@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './HomePage.module.css';
-import NavBar from '../../components/navbar/NavBar';
 import CardsetList from '../../components/cardsetlist/cardsetList';
+import ReminderList from '../../components/reminderlist/remindersList';
 
 
 const HomePage = () => {
@@ -16,16 +16,14 @@ const HomePage = () => {
       <div className="container">
         <div className="row">
           <div className={`col-md-6 ${styles.cardSets} ${styles.spacing}`}>
-            <h1>Card Sets</h1>
-            <CardsetList></CardsetList>
+            <CardsetList/>
           </div>
           <div className={`col-md-6 ${styles.currStreaks} ${styles.spacing}`}>
-            <h1>Current Streaks</h1>
+            <ReminderList/>
           </div>
         </div>
       </div>
 
-      <NavBar></NavBar>
     </>
   );
 };

@@ -2,18 +2,21 @@ import { useState } from 'react'
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom'
 import { PrimeReactProvider } from 'primereact/api'
 import { Provider } from 'react-redux'
-import store from './store/store'
 import HomePage from './pages/HomePage/HomePage'
 import StudyPage from './pages/StudyPage/StudyPage'
 import PreviewPage from './pages/PreviewPage/PreviewPage'
 import FinishedPage from './pages/FinishPage/FinishPage'
+import NavBar from './components/navbar/NavBar'
 import './App.css'
 
 export default function App() {
   return (
-    <Provider store={store}>
+    
       <PrimeReactProvider>
         <Router>
+          <header>
+            <NavBar />
+          </header>
           <Routes>
             {/* Home or Welcome page */}
             <Route path="/" element={<HomePage />} />
@@ -29,6 +32,6 @@ export default function App() {
           </Routes>
         </Router>
       </PrimeReactProvider>
-    </Provider>
+
   )
 }

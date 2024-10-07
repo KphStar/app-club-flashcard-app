@@ -1,0 +1,28 @@
+/* CardsetList.css */
+
+/* Main container for the cardsets */
+.cardset-container {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Scrollable div for the card sets */
+  .scrollable-div {
+    height: 200px; /* Fixed height for the scrollable area */
+    width: 100%; /* Full width of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: add a border to visualize the area */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in the height/width calculation */
+  }
+  
+  /* Optional styling for the card set list */
+  .scrollable-div ul {
+    list-style-type: none; /* Remove bullet points from list */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .scrollable-div li {
+    margin-bottom: 10px; /* Add space between list items */
+  }
+  

@@ -1,0 +1,36 @@
+/* FinishedPage.module.css */
+
+/* Container for centering the content */
+.finishedPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Full viewport height */
+  }
+  
+  /* Center and align content */
+  .finishedContent {
+    text-align: center;
+  }
+  
+  /* Large "Nice Job" text */
+  .niceJob {
+    font-size: 4rem; /* Large font size */
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Large checkmark icon */
+  .checkmark {
+    font-size: 6rem; /* Larger font size for the checkmark */
+    display: block;
+    margin: 20px auto;
+    color: green; /* Optional: you can change the color if needed */
+  }
+  
+  /* Message under the checkmark */
+  .completionMessage {
+    font-size: 1.5rem; /* Slightly larger font for better readability */
+    margin-top: 20px;
+  }
+  

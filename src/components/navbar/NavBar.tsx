@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './NavBar.module.css';
 import { Menubar } from 'primereact/menubar';
 import {MenuItem} from 'primereact/menuitem/menuitem';
+import { TabMenu } from 'primereact/tabmenu';
 import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
@@ -18,12 +19,12 @@ const NavBar = () => {
         },
         {
             label: 'Study Page',
-            icon: 'pi pi-pen-to-square',
+            icon: 'pi pi-file-check',
             
         },
         {
             label: 'Preview Page',
-            icon: 'pi pi-file-check',
+            icon: 'pi pi-pen-to-square',
             
         },
         {
@@ -36,9 +37,9 @@ const NavBar = () => {
 ]
   return (
     <>
-      <div className='bottom-nav'>
-      <Menubar model={items} />
-      </div>
+      
+      <Menubar model={items} className={styles.customMenubar}/>
+      
     </>
   );
 };

@@ -1,0 +1,16 @@
+.customMenubar {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 0px;
+    justify-content: space-evenly;
+    background: none;
+    border: none;
+  }
+  
+/* .p-menubar-root {
+    display: flex;
+    justify-content: space-between; 
+    flex-grow: 1;
+} */
+
