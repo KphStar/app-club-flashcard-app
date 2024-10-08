@@ -34,14 +34,19 @@ const currentSetSlice = createSlice( {
     name: "currentSet",
     initialState,
     reducers: {
-        updateConfidence: (state, action: PayloadAction<{ index: number; newConfidence: 0 | 1 | 2}>) => {
-            const { index, newConfidence } = action.payload;
+        updateConfidence: (state, action: PayloadAction<{ cardId: string; newConfidence: 0 | 1 | 2}>) => {
+            const { cardId, newConfidence } = action.payload;
 
-            if(state[index]) {
-                state[index].confidence = newConfidence;
-            } else {
-                console.error("Cardsets Slicer: Invalid index provided");
-            }
+            // const cardIndex = state.findIndex(card => card.cardId === cardId);
+
+            // if (cardIndex !== -1) {
+            //     state[cardIndex].confidence = newConfidence; // Update the confidence of the found card
+            //   } else {
+            //     console.error('Cardsets Slicer: Invalid cardId provided');
+            // }
+            return state.map((card) =>
+                card.cardId === cardId ? { ...card, confidence: newConfidence } : card
+              );
         }
     },
 });

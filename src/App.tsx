@@ -27,7 +27,7 @@ export default function App() {
             {/* Study mode, where you display one card at a time */}
             <Route path="/study/:setId" element={<StudyPage />} />
 
-            {/* Finished page, after the user finishes studying all the cards */}
+            Finished page, after the user finishes studying all the cards
             <Route path="/finished" element={<FinishedPage />} />
           </Routes>
         </Router>

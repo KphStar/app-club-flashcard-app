@@ -7,6 +7,10 @@ export const store = configureStore({
         cardsets: cardsetsReducer,
         currentSet: currentSetReducer,
     },
+    middleware: getDefaultMiddleware => //this makes the warnings for editing the state array go away
+        getDefaultMiddleware({
+          serializableCheck: false,
+    })
 });
 
 export type RootState = ReturnType<typeof store.getState>;

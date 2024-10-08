@@ -4,8 +4,12 @@ import { RootState } from '@reduxjs/toolkit/query';
 import { useDispatch, useSelector } from 'react-redux';
 import { Flashcard } from '../../shared/interfaces';
 import FinishPage from '../FinishPage/FinishPage';
-import { getNextCard } from '../../services/flashcardLogic'; // Import the function
+import { getNextCard } from '../../services/flashcardLogic';
 import { updateConfidence } from '../../state/currentSet/currenSetSlice';
+import { Accordion, AccordionTab } from 'primereact/accordion';
+import { Button } from 'primereact/button';
+import styles from './StudyPage.module.css';
+         
 
 const StudyPage = () => {
 
@@ -20,10 +24,8 @@ const StudyPage = () => {
     if (!currentCard) return;
 
     // Dispatch action to update confidence in Redux state
-    const cardIndex = cardset.findIndex(card => card.cardId === currentCard.cardId);
-    if (cardIndex !== -1) {
-      dispatch(updateConfidence({ index: cardIndex, newConfidence }));
-    }
+    dispatch(updateConfidence({ cardId: currentCard.cardId, newConfidence }));
+    
 
     // Set the previous card to the current card (updated with new confidence)
     const updatedPreviousCard = { ...currentCard, confidence: newConfidence };
@@ -44,14 +46,21 @@ const StudyPage = () => {
   }, [currentCard, cardset]);
 
   return (
-    <div>
-      <h1>Study Page</h1>
+    <div className={styles.studyPageContainer}>
+      <h1 className={styles.studyPageTitle}>Study Page</h1>
       {currentCard ? (
-        <div>
-          <h2>{currentCard.question}</h2>
-          <button onClick={() => setConfidence(0)}>Idk?</button>
-          <button onClick={() => setConfidence(1)}>Ehhh</button>
-          <button onClick={() => setConfidence(2)}>I know it!</button>
+        <div className={styles.studyPageContent}>
+          <h2 className={styles.questionTitle}>{currentCard.question}</h2>
+          <Accordion activeIndex={0} className={styles.customAccordion}>
+            <AccordionTab header="Click to reveal answer">
+              <p>{currentCard.answer}</p>
+            </AccordionTab>
+          </Accordion>
+          <div className={styles.buttonGroup}>
+            <Button label="Idk?" onClick={() => setConfidence(0)} className="p-button-danger" />
+            <Button label="Ehhh" onClick={() => setConfidence(1)} className="p-button-warning" />
+            <Button label="I know it!" onClick={() => setConfidence(2)} className="p-button-success" />
+          </div>
         </div>
       ) : (
         <FinishPage />

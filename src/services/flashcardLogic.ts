@@ -32,3 +32,4 @@ export const getNextCard = (previousCard: Flashcard | null, cardSet: Flashcard[]
 
   return cardSet.find(card => card.confidence === 0) || cardSet.find(card => card.confidence === 1) || cardSet.find(card => card.confidence === 2) || null;
 };
+

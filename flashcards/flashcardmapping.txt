@@ -1,0 +1,101 @@
+[
+  {
+    "title": "Spanish Cards",
+    "setId": "4b9cfd4e-9cb7-4d10-b19d-52bb48a857f8",
+    "description": "Spanish Vocab for my upcoming final",
+    "reminderTime": "2024-09-27T00:00:00.000Z", 
+    "numCards": 4,
+    "cards": [
+      {
+        "cardId": "0",
+        "question": "How do you say \"programming\"",
+        "answer": "programación",
+        "confidence": 0
+      },
+      {
+        "cardId": "1",
+        "question": "How do you say \"dog\"",
+        "answer": "perro/perra",
+        "confidence": 0
+      },
+      {
+        "cardId": "2",
+        "question": "How do you say \"I go\"",
+        "answer": "voy",
+        "confidence": 0
+      },
+      {
+        "cardId": "3",
+        "question": "How do you say \"You need?\"",
+        "answer": "necesitas",
+        "confidence": 0
+      }
+    ]
+  },
+  {
+    "title": "Math Cards",
+    "setId": "a69d7a63-9bc2-40ae-8e9a-56d7d21fa0b7",
+    "description": "Math definitions for my discrete math final",
+    "reminderTime": "2024-10-09T00:00:00.000Z", 
+    "numCards": 3,
+    "cards": [
+      {
+        "cardId": "0",
+        "question": "Prime number?",
+        "answer": "Only divisible by 1 and itself.",
+        "confidence": 0
+      },
+      {
+        "cardId": "1",
+        "question": "Pythagorean Theorem?",
+        "answer": "a² + b² = c²",
+        "confidence": 0
+      },
+      {
+        "cardId": "2",
+        "question": "Set definition?",
+        "answer": "A collection of distinct elements.",
+        "confidence": 0
+      }
+    ]
+  },
+  {
+    "title": "Physics Cards",
+    "setId": "318f3cbb-2d9c-47d2-84e1-87461f73c57c",
+    "description": "Physics formulas for my final",
+    "reminderTime": "2024-10-27T00:00:00.000Z", 
+    "numCards": 5,
+    "cards": [
+      {
+        "cardId": "0",
+        "question": "Newton's 2nd Law?",
+        "answer": "F = ma",
+        "confidence": 0
+      },
+      {
+        "cardId": "1",
+        "question": "Kinetic energy?",
+        "answer": "KE = 1/2 mv²",
+        "confidence": 0
+      },
+      {
+        "cardId": "2",
+        "question": "Gravitational PE?",
+        "answer": "PE = mgh",
+        "confidence": 0
+      },
+      {
+        "cardId": "3",
+        "question": "Speed of light?",
+        "answer": "3.00 × 10^8 m/s",
+        "confidence": 0
+      },
+      {
+        "cardId": "4",
+        "question": "Ohm's Law?",
+        "answer": "V = IR",
+        "confidence": 0
+      }
+    ]
+  }
+]

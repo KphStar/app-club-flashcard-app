@@ -5,11 +5,12 @@ import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { PrimeIcons } from 'primereact/api';
 import  styles  from './FinishPage.module.css';
+import WipeButton from '../../components/wipeButton/wipeButton';
 
 const FinishedPage = () => {
   const { setName } = useParams<{ setName: string }>(); // Assuming you're passing the study set name as a route param
 
-  // You can customize this to dynamically calculate the next review time
+  //customize this to dynamically calculate the next review time
   const recommendedReviewTime = "2 days"; 
 
   return (
@@ -27,6 +28,8 @@ const FinishedPage = () => {
             You have completed <strong>{setName}</strong> study set. <br />
             For best results, you should recall the set in <strong>{recommendedReviewTime}</strong>.
           </p>
+
+          <WipeButton/>
         </div>
       </div>
     </div>

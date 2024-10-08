@@ -18,7 +18,7 @@ const NavBar = () => {
             },
         },
         {
-            label: 'Study Page',
+            label: 'Edit Page',
             icon: 'pi pi-file-check',
             
         },
@@ -27,13 +27,13 @@ const NavBar = () => {
             icon: 'pi pi-pen-to-square',
             
         },
-        {
-            label: 'Finish Page',
-            icon: 'pi pi-check',
-            command: () => {
-                navigate('/finished');
-            },
-        },
+        // {
+        //     label: 'Finish Page',
+        //     icon: 'pi pi-check',
+        //     command: () => {
+        //         navigate('/finished');
+        //     },
+        // },
 ]
   return (
     <>

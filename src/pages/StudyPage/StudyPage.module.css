@@ -1,0 +1,50 @@
+/* Entire container for the study page */
+.studyPageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    background: none; /* Removed background color to let PrimeReact handle it */
+  }
+  
+  /* Main title styling */
+  .studyPageTitle {
+    font-size: 3rem;
+    color: inherit; /* Let PrimeReact inherit the color */
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  /* Question title */
+  .questionTitle {
+    font-size: 2rem;
+    color: inherit; /* Let PrimeReact inherit the color */
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Accordion styling */
+  .customAccordion {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    border: none; /* Remove border to let PrimeReact handle it */
+  }
+  
+  /* Button group styling */
+  .buttonGroup {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  /* PrimeReact button override styles */
+  .p-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    background: none; /* Remove button background, let PrimeReact handle it */
+  }
+  
