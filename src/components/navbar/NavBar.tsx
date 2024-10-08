@@ -23,8 +23,11 @@ const NavBar = () => {
             
         },
         {
-            label: 'Preview Page',
+            label: 'Overview Page',
             icon: 'pi pi-pen-to-square',
+            command: () => {
+                      navigate('/overview');
+                  },
             
         },
         // {

@@ -48,3 +48,7 @@
     background: none; /* Remove button background, let PrimeReact handle it */
   }
   
+  .p-accordion .p-accordion-content {
+    transition: height 0.1s ease-in-out; /* Faster transition */
+  }
+  

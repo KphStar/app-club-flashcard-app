@@ -24,7 +24,7 @@ const CardsetList = () => {
 
   return (
     <div className="cardset-container">
-      <h1>Card Sets</h1>
+      <h1>Recent Card Sets</h1>
       <div className="scrollable-div">
         <ul>
           {cardsetsList.map((cardset: any) => (

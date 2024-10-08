@@ -10,6 +10,7 @@ import NavBar from './components/navbar/NavBar'
 import './App.css'
 
 import { useLoadCardSets } from './hooks/loadCardSets'
+import OverviewPage from './pages/OverviewPage/OverviewPage'
 
 export default function App() {
   useLoadCardSets();
@@ -30,7 +31,10 @@ export default function App() {
             {/* Study mode, where you display one card at a time */}
             <Route path="/study/:setId" element={<StudyPage />} />
 
-            Finished page, after the user finishes studying all the cards
+            {/* Overview page, after the user finishes studying all the cards */}
+            <Route path="/overview" element={<OverviewPage />} />
+
+            {/* Finished page, after the user finishes studying all the cards */}
             <Route path="/finished" element={<FinishedPage />} />
           </Routes>
         </Router>
