@@ -1,14 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './cardsetList.module.css';
-import { Menubar } from 'primereact/menubar';
-import {MenuItem} from 'primereact/menuitem/menuitem';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@reduxjs/toolkit/query';
 import { setCurrentSet } from '../../state/currentSet/currenSetSlice';
-
-
+import styles from './cardsetList.module.css';
 
 const CardsetList = () => {
   const cardsetsList = useSelector((state: RootState) => state.cardsets);
@@ -22,16 +17,21 @@ const CardsetList = () => {
     navigate(`/study/${setId}`);
   };
 
+  const getRandomColor = () => {
+    const colors = ['#FF6347', '#FFA500', '#00FF00', '#9370DB'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  };
+
   return (
-    <div className="cardset-container">
-      <h1>Recent Card Sets</h1>
-      <div className="scrollable-div">
+    <div className={styles.cardsetContainer}>
+      <h1 className={styles.header}>Recent Card Sets</h1>
+      <div className={styles.fixedHeightDiv}>
         <ul>
-          {cardsetsList.map((cardset: any) => (
+          {cardsetsList.slice(0, 3).map((cardset: any) => (
             <li key={cardset.setId}>
               <h2
                 onClick={() => loadFlashcards(cardset.setId)} // Trigger the loading of flashcards on click
-                style={{ cursor: 'pointer', color: 'blue' }}
+                style={{ cursor: 'pointer', color: getRandomColor() }} // Random color for each cardset
               >
                 {cardset.title}
               </h2>
