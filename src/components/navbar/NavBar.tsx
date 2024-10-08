@@ -18,13 +18,13 @@ const NavBar = () => {
             },
         },
         {
-            label: 'Edit Page',
-            icon: 'pi pi-file-check',
+            label: 'Create New',
+            icon: 'pi pi-pen-to-square',
             
         },
         {
             label: 'Overview Page',
-            icon: 'pi pi-pen-to-square',
+            icon: 'pi pi-file-check',
             command: () => {
                       navigate('/overview');
                   },

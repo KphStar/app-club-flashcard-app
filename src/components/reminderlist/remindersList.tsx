@@ -6,7 +6,7 @@ import styles from './remindersList.module.css'; // Fixed import
 const ReminderList = () => {
   const cardsetsList = useSelector((state: RootState) => state.cardsets);
   const [timeDifferences, setTimeDifferences] = useState<string[]>([]);
-  const [colors, setColors] = useState<string[]>([]); // State to hold static colors
+  const [randomColors, setRandomColors] = useState<string[]>([]); // Store random colors in state
 
   // Function to calculate time difference in days:hours:minutes
   const formatTimeDifference = (reminderTime: Date | null) => {
@@ -31,15 +31,16 @@ const ReminderList = () => {
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
-  // On component mount, calculate time differences and assign colors
   useEffect(() => {
-    const assignedColors = cardsetsList.map(() => getRandomColor());
-    setColors(assignedColors);
-
     const updatedTimes = cardsetsList.map((cardset: any) =>
       formatTimeDifference(cardset.reminderTime)
     );
     setTimeDifferences(updatedTimes);
+
+    // Generate and store random colors for each cardset
+    const generatedColors = cardsetsList.map(() => getRandomColor());
+    setRandomColors(generatedColors);
+
   }, [cardsetsList]);
 
   return (
@@ -50,7 +51,7 @@ const ReminderList = () => {
           {cardsetsList.slice(0, 3).map((cardset: any, index: number) => (
             <li key={cardset.setId}>
               <h2
-                style={{ color: getRandomColor() }} // Random color for each cardset, only when component renders
+                style={{ color: randomColors[index] }} // Use the pre-generated random color
               >
                 {cardset.title}:
               </h2>
@@ -61,6 +62,6 @@ const ReminderList = () => {
       </div>
     </div>
   );
-}
+};
 
 export default ReminderList;

@@ -34,7 +34,8 @@ const OverviewPage = () => {
                 <li>Number of Cards: {cardset.numCards}</li>
               </ul>
               <div className={styles.centerButton}> {/* Centered the button */}
-                <Button label="Go to Preview" onClick={() => navigate(`/preview/${cardset.setId}`)} /> {/* Route to preview */}
+                <Button label="Preview" onClick={() => navigate(`/preview/${cardset.setId}`)}  />
+                <Button label="Edit" onClick={() => navigate(`/edit/${cardset.setId}`)} className="p-button-outlined p-button-secondary" style={{ marginLeft: '10px' }} />
               </div>
               <p className={styles.setId}>Set ID: {cardset.setId}</p>
             </Card>
@@ -46,4 +47,3 @@ const OverviewPage = () => {
 };
 
 export default OverviewPage;
-
