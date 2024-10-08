@@ -9,7 +9,10 @@ import FinishedPage from './pages/FinishPage/FinishPage'
 import NavBar from './components/navbar/NavBar'
 import './App.css'
 
+import { useLoadCardSets } from './hooks/loadCardSets'
+
 export default function App() {
+  useLoadCardSets();
   return (
     
       <PrimeReactProvider>

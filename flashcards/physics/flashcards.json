@@ -1,0 +1,32 @@
+[
+    {
+      "cardId": "0",
+      "question": "Newton's 2nd Law?",
+      "answer": "F = ma",
+      "confidence": 0
+    },
+    {
+      "cardId": "1",
+      "question": "Kinetic energy?",
+      "answer": "KE = 1/2 mv²",
+      "confidence": 0
+    },
+    {
+      "cardId": "2",
+      "question": "Gravitational PE?",
+      "answer": "PE = mgh",
+      "confidence": 0
+    },
+    {
+      "cardId": "3",
+      "question": "Speed of light?",
+      "answer": "3.00 × 10^8 m/s",
+      "confidence": 0
+    },
+    {
+      "cardId": "4",
+      "question": "Ohm's Law?",
+      "answer": "V = IR",
+      "confidence": 0
+    }
+  ]

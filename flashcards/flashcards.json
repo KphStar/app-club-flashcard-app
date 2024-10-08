@@ -8,25 +8,25 @@
     "cards": [
       {
         "cardId": "0",
-        "question": "How do you say \"programming\"",
+        "question": "How do you say \"programming\" in Spanish?",
         "answer": "programación",
         "confidence": 0
       },
       {
         "cardId": "1",
-        "question": "How do you say \"dog\"",
+        "question": "How do you say \"dog\" Spanish?",
         "answer": "perro/perra",
         "confidence": 0
       },
       {
         "cardId": "2",
-        "question": "How do you say \"I go\"",
+        "question": "How do you say \"I go\" Spanish?",
         "answer": "voy",
         "confidence": 0
       },
       {
         "cardId": "3",
-        "question": "How do you say \"You need?\"",
+        "question": "How do you say \"You need?\" Spanish?",
         "answer": "necesitas",
         "confidence": 0
       }

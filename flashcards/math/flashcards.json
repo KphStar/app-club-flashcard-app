@@ -1,0 +1,20 @@
+[
+    {
+      "cardId": "0",
+      "question": "Prime number?",
+      "answer": "Only divisible by 1 and itself.",
+      "confidence": 0
+    },
+    {
+      "cardId": "1",
+      "question": "Pythagorean Theorem?",
+      "answer": "a² + b² = c²",
+      "confidence": 0
+    },
+    {
+      "cardId": "2",
+      "question": "Set definition?",
+      "answer": "A collection of distinct elements.",
+      "confidence": 0
+    }
+]

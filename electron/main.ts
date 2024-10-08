@@ -1,7 +1,8 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
+import fs from 'fs';
 
 const require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -46,6 +47,35 @@ function createWindow() {
     win.loadFile(path.join(RENDERER_DIST, 'index.html'))
   }
 }
+
+ipcMain.handle('read-all-metadata', async () => {
+  try {
+    const flashcardsDir = path.join(__dirname, '../flashcards'); // Adjust to your structure
+    const sets = [];
+
+    // Read directories inside the flashcards folder
+    const directories = fs.readdirSync(flashcardsDir, { withFileTypes: true });
+
+    // Loop through each directory in the flashcards folder
+    for (const dir of directories) {
+      if (dir.isDirectory()) {
+        const metadataPath = path.join(flashcardsDir, dir.name, 'metadata.json');
+
+        // Check if metadata file exists
+        if (fs.existsSync(metadataPath)) {
+          const metadata = fs.readFileSync(metadataPath, 'utf8');
+          sets.push(JSON.parse(metadata)); // Push parsed metadata to the array
+        }
+      }
+    }
+
+    return sets; // Return all the metadata files as an array
+  } catch (error) {
+    console.error('Error reading metadata files:', error);
+    return []; // Return an empty array if there’s an error
+  }
+});
+
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits

@@ -1,7 +1,8 @@
-import { app, BrowserWindow } from "electron";
+import { ipcMain, app, BrowserWindow } from "electron";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import fs from "fs";
 createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 process.env.APP_ROOT = path.join(__dirname, "..");
@@ -26,6 +27,26 @@ function createWindow() {
     win.loadFile(path.join(RENDERER_DIST, "index.html"));
   }
 }
+ipcMain.handle("read-all-metadata", async () => {
+  try {
+    const flashcardsDir = path.join(__dirname, "../flashcards");
+    const sets = [];
+    const directories = fs.readdirSync(flashcardsDir, { withFileTypes: true });
+    for (const dir of directories) {
+      if (dir.isDirectory()) {
+        const metadataPath = path.join(flashcardsDir, dir.name, "metadata.json");
+        if (fs.existsSync(metadataPath)) {
+          const metadata = fs.readFileSync(metadataPath, "utf8");
+          sets.push(JSON.parse(metadata));
+        }
+      }
+    }
+    return sets;
+  } catch (error) {
+    console.error("Error reading metadata files:", error);
+    return [];
+  }
+});
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();

@@ -20,3 +20,7 @@ electron.contextBridge.exposeInMainWorld("ipcRenderer", {
   // You can expose other APTs you need here.
   // ...
 });
+electron.contextBridge.exposeInMainWorld("electron", {
+  // ipcRenderer API
+  readAllMetadata: () => electron.ipcRenderer.invoke("read-all-metadata")
+});
