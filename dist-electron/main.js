@@ -47,6 +47,20 @@ ipcMain.handle("read-all-metadata", async () => {
     return [];
   }
 });
+ipcMain.handle("read-flashcards", async (event, setId) => {
+  try {
+    const flashcardsPath = path.join(__dirname, "../flashcards", setId, "flashcards.json");
+    if (fs.existsSync(flashcardsPath)) {
+      const flashcardsData = fs.readFileSync(flashcardsPath, "utf-8");
+      return JSON.parse(flashcardsData);
+    } else {
+      throw new Error("Flashcards file not found");
+    }
+  } catch (error) {
+    console.error("Error reading flashcards file:", error);
+    return null;
+  }
+});
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();

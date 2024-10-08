@@ -48,6 +48,8 @@ function createWindow() {
   }
 }
 
+//my handlers
+
 ipcMain.handle('read-all-metadata', async () => {
   try {
     const flashcardsDir = path.join(__dirname, '../flashcards'); // Adjust to your structure
@@ -75,6 +77,22 @@ ipcMain.handle('read-all-metadata', async () => {
     return []; // Return an empty array if there’s an error
   }
 });
+
+ipcMain.handle('read-flashcards', async (event, setId) => {
+  try {
+    const flashcardsPath = path.join(__dirname, '../flashcards', setId, 'flashcards.json'); // Adjust path based on structure
+    if (fs.existsSync(flashcardsPath)) {
+      const flashcardsData = fs.readFileSync(flashcardsPath, 'utf-8');
+      return JSON.parse(flashcardsData); // Return the parsed flashcards data
+    } else {
+      throw new Error('Flashcards file not found');
+    }
+  } catch (error) {
+    console.error('Error reading flashcards file:', error);
+    return null; // Return null or handle error in some way
+  }
+});
+
 
 
 // Quit when all windows are closed, except on macOS. There, it's common

@@ -27,4 +27,5 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
 contextBridge.exposeInMainWorld('electron', {
   // ipcRenderer API
   readAllMetadata: () => ipcRenderer.invoke('read-all-metadata'),
+  readFlashcards: (setId: string) => ipcRenderer.invoke('read-flashcards', setId),
 });
