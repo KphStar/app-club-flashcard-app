@@ -1,7 +1,5 @@
-import { useState } from 'react'
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom'
 import { PrimeReactProvider } from 'primereact/api'
-import { Provider } from 'react-redux'
 import HomePage from './pages/HomePage/HomePage'
 import StudyPage from './pages/StudyPage/StudyPage'
 import PreviewPage from './pages/PreviewPage/PreviewPage'
